@@ -1,5 +1,5 @@
 {
-    "name": "academicpuma/citeproc-php",
+    "name": "visol/citeproc-php",
     "description": "This is an effort to implement a full-featured standalone CSL processor in PHP. The code based on the implementation of Ron Jerome.",
     "require-dev": {
         "phpunit/phpunit":"3.7.*",
