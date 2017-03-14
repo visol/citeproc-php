@@ -110,11 +110,14 @@ class Locale {
         return $localeFile;
     }
 
-    public function __construct($lang = 'en') {
+    public function __construct($lang = 'en', $locale) {
 
         $this->module_path = dirname(__FILE__);
-	    $this->locale = new \SimpleXMLElement(self::getLocalesFileName($lang));
-
+        if ($locale) {
+            $this->locale = new \SimpleXMLElement($locale);
+        } else {
+            $this->locale = new \SimpleXMLElement(self::getLocalesFileName($lang));
+        }
         if ($this->locale) {
             $this->locale->registerXPathNamespace('cs', 'http://purl.org/net/xbiblio/csl');
         }

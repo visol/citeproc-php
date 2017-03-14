@@ -108,15 +108,16 @@ class CiteProc
      * CiteProc constructor.
      * @param string $csl xml formatted csl stylesheet
      * @param string $lang
+     * @param null|string $locale The locale as blob
      */
-    function __construct($csl = NULL, $lang = 'en')
+    function __construct($csl = NULL, $lang = 'en', $locale = null)
     {
         if ($csl) {
-            $this->init($csl, $lang);
+            $this->init($csl, $lang, $locale);
         }
     }
 
-    private function init($csl, $lang)
+    private function init($csl, $lang, $locale)
     {
         // define field values appropriate to your data in the csl_mapper class and un-comment the next line.        
         $this->mapper = new Mapper();
@@ -140,7 +141,7 @@ class CiteProc
                 }
             }
 
-            $this->locale = new Locale($lang);
+            $this->locale = new Locale($lang, $locale);
             $this->locale->setStyleLocale($cslDoc);
 
             $macroNodes = $cslDoc->getElementsByTagName('macro');
