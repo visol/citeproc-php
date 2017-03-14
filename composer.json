@@ -1,5 +1,5 @@
 {
-    "name": "seboettg/citeproc-php",
+    "name": "visol/citeproc-php",
     "description": "Full-featured CSL processor (https://citationstyles.org)",
     "license": "MIT",
     "authors": [
